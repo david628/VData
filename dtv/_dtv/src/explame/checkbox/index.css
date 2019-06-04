@@ -1,0 +1,40 @@
+.hwapp-checkbox {
+  display: inline-block;
+  cursor: pointer;
+}
+.hwapp-checkbox input[type="checkbox"] {
+  display: none;
+}
+.hwapp-checkbox input[type="checkbox"] + label {
+  width: 14px;
+  height: 14px;
+  background-color: #FFF;
+  border: 1px solid #C1CACA;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.hwapp-checkbox input[type="checkbox"] + label:after {
+  content: '';
+  width: 8px;
+  height: 3px;
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  color: #758794;
+  border-left: 2px solid #00c1de;
+  border-bottom: 2px solid #00c1de;
+  background: rgba(0, 0, 0, 0);
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+.hwapp-checkbox input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.hwapp-checkbox  .hwapp-checkbox-label {
+  font-size: 12px;
+  vertical-align: middle;
+  cursor: pointer;
+}

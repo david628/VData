@@ -1,0 +1,49 @@
+.hwapp-number {
+  position: relative;
+  display: inline-block;
+  padding-right: 19px;
+}
+.hwapp-number .hwapp-number-oper {
+  width: 18px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  color: #999;
+  border: 1px solid #c4c6cf;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background-color: #fff;
+}
+.hwapp-number .hwapp-number-oper:hover {
+  border-color: #00c1de;
+  color: #00c1de;
+  z-index: 1;
+}
+.hwapp-number .hwapp-number-add {
+  height: 14px;
+  line-height: 14px;
+  top: 0;
+}
+.hwapp-number .hwapp-number-reduce {
+  height: 14px;
+  line-height: 14px;
+  bottom: 0;
+}
+.hwapp-number .hwapp-number-input {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #c4c6cf;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  color: #666;
+  margin: 0;
+  vertical-align: top;
+  outline: none;
+}
+.hwapp-number .hwapp-number-input:hover, .hwapp-number .hwapp-number-input:focus {
+  border-color: #00c1de;
+  z-index: 1;
+}

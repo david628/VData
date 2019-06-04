@@ -1,0 +1,86 @@
+.hwapp-select {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+}
+.hwapp-select .hwapp-select-input {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  padding-right: 40px;
+  border: 1px solid #c4c6cf;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  color: #666;
+  margin: 0;
+  vertical-align: top;
+  outline: none;
+}
+.hwapp-select .hwapp-select-trigger {
+  width: 30px;
+  height: 28px;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #DDDDDD;
+  text-align: center;
+  border: 1px solid #ddd;
+  background: #eee;
+}
+.hwapp-select .hwapp-select-trigger:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  border-left: 2px solid #cacaca;
+  border-bottom: 2px solid #cacaca;
+  background: rgba(0, 0, 0, 0);
+  transform: rotate(-45deg);
+  -o-transition: transform .3s linear;
+  -moz-transition: transform .3s linear;
+  -webkit-transition: transform .3s linear;
+  -ms-transition: transform .3s linear;
+}
+.hwapp-select-open .hwapp-select-trigger:after {
+  top: 10px;
+  transform: rotate(-225deg);
+}
+.hwapp-select-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+  -ms-box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+  opacity: 0;
+  transform: translate(0px, 5px);
+  transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+  -moz-transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+  -webkit-transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+  -o-transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+  visibility: hidden;
+}
+.hwapp-select-item {
+  font-size: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.hwapp-select-item:hover, .hwapp-select-item-active {
+  background: #efefef;
+}
+.hwapp-select-list-show {
+  visibility: visible;
+  opacity: 100;
+  transform: translate(0, 0);
+}

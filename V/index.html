@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: transparent;
+}
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body {
+  background: url(//img.alicdn.com/tfs/TB1WYCFSFXXXXbpXXXXXXXXXXXX-16-16.png) repeat;
+  background-size: 8px 8px;
+  font-family: "Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+
+.cls-unselectable, .cls-unselectable * {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  -webkit-user-select: ignore;
+}
+.cls-resize {
+  cursor: col-resize;
+}
+.cls-text-resize {
+  position: absolute;
+  left: -1000px;
+  top: -1000px;
+  visibility: hidden;
+  zoom: 1;
+}
+.cls-resizable-handle {
+  position: absolute;
+  z-index: 100;
+  font-size: 1px;
+  line-height: 6px;
+  overflow: hidden;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  zoom: 1;
+}
+.cls-resizable-handle-east {
+  width: 6px;
+  cursor: e-resize;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+.dldh-ie .cls-resizable-handle-east {
+  margin-right: -1px;
+}
+.cls-resizable-handle-south {
+  width: 100%;
+  cursor: s-resize;
+  left: 0;
+  bottom: 0;
+  height: 6px;
+}
+.dldh-ie .cls-resizable-handle-south {
+  margin-bottom: -1px;
+}
+.cls-resizable-handle-west {
+  width: 6px;
+  cursor: w-resize;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.cls-resizable-handle-north {
+  width: 100%;
+  cursor: n-resize;
+  left: 0;
+  top: 0;
+  height: 6px;
+}
+.cls-resizable-handle-southeast {
+  width: 6px;
+  cursor: se-resize;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  z-index: 101;
+}
+.cls-resizable-handle-northwest {
+  width: 6px;
+  cursor: nw-resize;
+  left: 0;
+  top: 0;
+  height: 6px;
+  z-index: 101;
+}
+.cls-resizable-handle-northeast {
+  width: 6px;
+  cursor: ne-resize;
+  right: 0;
+  top: 0;
+  height: 6px;
+  z-index: 101;
+}
+.cls-resizable-handle-southwest {
+  width: 6px;
+  cursor: sw-resize;
+  left: 0;
+  bottom: 0;
+  height: 6px;
+  z-index: 101;
+}
+.cls-resizable-over .cls-resizable-handle, .cls-resizable-pinned .cls-resizable-handle {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.cls-resizable-over .cls-resizable-handle-east, .cls-resizable-pinned .cls-resizable-handle-east, .cls-resizable-over .cls-resizable-handle-west, .cls-resizable-pinned .cls-resizable-handle-west {
+  background-position: left;
+}
+.cls-resizable-over .cls-resizable-handle-south, .cls-resizable-pinned .cls-resizable-handle-south, .cls-resizable-over .cls-resizable-handle-north, .cls-resizable-pinned .cls-resizable-handle-north {
+   background-position: top;
+}
+.cls-resizable-over .cls-resizable-handle-southeast, .cls-resizable-pinned .cls-resizable-handle-southeast {
+  background-position: top left;
+}
+.cls-resizable-over .cls-resizable-handle-northwest, .cls-resizable-pinned .cls-resizable-handle-northwest {
+  background-position: bottom right;
+}
+.cls-resizable-over .cls-resizable-handle-northeast, .cls-resizable-pinned .cls-resizable-handle-northeast {
+  background-position: bottom left;
+}
+.cls-resizable-over .cls-resizable-handle-southwest, .cls-resizable-pinned .cls-resizable-handle-southwest {
+  background-position: top right;
+}
+.cls-resizable-proxy {
+  border: 1px dashed;
+  position: absolute;
+  overflow: hidden;
+  display: none;
+  left: 0;
+  top: 0;
+  z-index: 50000;
+}
+.cls-resizable-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  z-index: 200000;
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.cls-resizable-handle {
+  /*background-color: #fff;*/
+}
+.cls-resizable-over .cls-resizable-handle-east, .cls-resizable-pinned .cls-resizable-handle-east, .cls-resizable-over .cls-resizable-handle-west, .cls-resizable-pinned .cls-resizable-handle-west {
+  /*background-image: url(../images/default/sizer/e-handle.gif);*/
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.cls-resizable-over .cls-resizable-handle-south, .cls-resizable-pinned .cls-resizable-handle-south, .cls-resizable-over .cls-resizable-handle-north, .cls-resizable-pinned .cls-resizable-handle-north {
+  /*background-image: url(../images/default/sizer/s-handle.gif);*/
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.cls-resizable-over .cls-resizable-handle-north, .cls-resizable-pinned .cls-resizable-handle-north {
+  /*background-image: url(../images/default/sizer/s-handle.gif);*/
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.cls-resizable-over .cls-resizable-handle-southeast, .cls-resizable-pinned .cls-resizable-handle-southeast {
+  /*background-image: url(../images/default/sizer/se-handle.gif);*/
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.cls-resizable-over .cls-resizable-handle-northwest, .cls-resizable-pinned .cls-resizable-handle-northwest {
+  /*background-image: url(../images/default/sizer/nw-handle.gif);*/
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.cls-resizable-over .cls-resizable-handle-northeast, .cls-resizable-pinned .cls-resizable-handle-northeast {
+  /*background-image: url(../images/default/sizer/ne-handle.gif);*/
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.cls-resizable-over .cls-resizable-handle-southwest, .cls-resizable-pinned .cls-resizable-handle-southwest {
+  /*background-image: url(../images/default/sizer/sw-handle.gif);*/
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.cls-resizable-proxy {
+  border-color: #3b5a82;
+}
+.cls-resizable-overlay {
+  background-color: #fff;
+}
+.cls-dragDrop-proxy {
+  position: absolute;
+  z-index: 999;
+  border: 2px dotted #666666;
+}
+.cls-dd-drag-proxy {
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: 15000;
+}
+.cls-dd-drop-icon {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.cls-dd-drop-ok .cls-dd-drop-icon {
+  /* background-image: url(../images/default/drop-yes.gif); */
+}
+.cls-dd-drop-no .cls-dd-drop-icon {
+  /* background-image: url(../images/default/drop-no.gif); */
+}
+.cls-dd-drag-ghost {
+  -moz-opacity: 0.85;
+  opacity: .85;
+  filter: alpha(opacity=85);
+  border: 1px solid;
+  padding: 3px;
+  padding-left: 20px;
+  white-space: nowrap;
+  color: #404040;
+  border: 1px solid #DDDDDD;
+  background: #FFFFFF;
+}
+.cls-dd-drag-ghost .cls-grid-hd-inner {
+  width: 120px;
+  margin: 0;
+  border: 0;
+  /*border: 1px solid #AACCF6;
+  background-image: url(../images/default/drop-over.gif);*/
+}
+.cls-dd-drag-ghost .cls-grid-row {
+  width: 120px;
+  overflow: hidden;
+  margin: 0;
+  border: 0;
+  /*border: 1px solid #AACCF6;
+  background-image: url(../images/default/drop-over.gif);*/
+}
+.cls-dd-drag-ghost .cls-grid-td-numberer, .cls-dd-drag-ghost .cls-grid-td-checker {
+  display: none;
+}
+
+.hwvdata {
+  width: 100%;
+  height: 100%;
+}
+.hwvdata .hwvdata-header {
+  width: 100%;
+  position: fixed;
+  background: #212528;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  z-index: 999999;
+  box-shadow: 0px 0px 10px 1px rgba(67,87,101,.6);
+}
+.hwvdata .hwvdata-content {
+  position: relative;
+  height: 100%;
+}
+.hwvdata-left {
+  position: absolute;
+  width: 160px;
+  left: 0;
+  top: 60px;
+  bottom: 0;
+  transition: left .3s;
+  background: #f7f8fa;
+  border-right: 1px solid #bfbfbf;
+  box-shadow: 0 0 4px 0 rgba(67,87,101,.1);
+}
+.hwvdata-center {
+  position: absolute;
+  top: 60px;
+  left: 160px;
+  right: 300px;
+  bottom: 0;
+}
+.hwvdata-right {
+  position: absolute;
+  width: 300px;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  transition: left .3s;
+  background: #f7f8fa;
+  border-left: 1px solid #bfbfbf;
+  box-shadow: 0 0 4px 0 rgba(67,87,101,.1);
+}
+
+.layer .layer-item {
+  border: 1px solid transparent;
+  border-bottom: 1px solid #dcdee3;
+  padding: 5px 10px 5px 30px;
+  cursor: move;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.layer .layer-item:hover {
+  background: rgba(0,192,222,.1);
+  border: 1px solid #00c1de;
+}
+
+.cmp .cmp-item {
+  padding: 20px 0;
+  text-align: center;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #dcdee3;
+  cursor: move;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.cmp .cmp-item:hover {
+  background: rgba(0,192,222,.1);
+  border: 1px solid #00c1de;
+}
+</style>
+</head>
+<body>
+  <div class="hwvdata">
+    <div class="hwvdata-header"></div>
+    <div class="hwvdata-content">
+      <div class="hwvdata-left">
+        <div style="width: 100px;height: 100%;float: left;">
+          <div id="id-layer" class="layer">
+            <div class="layer-item">图层1</div>
+            <div class="layer-item">图层2</div>
+            <div class="layer-item">图层3</div>
+            <div class="layer-item">图层4</div>
+            <div class="layer-item">图层5</div>
+            <div class="layer-item">图层6</div>
+          </div>
+        </div>
+        <div style="width: 60px;height: 100%;float: left;box-sizing: border-box;border-left: 1px solid #ddd;">
+          <div class="cmp">
+            <div class="cmp-item">饼图</div>
+            <div class="cmp-item">柱图</div>
+            <div class="cmp-item">线图</div>
+            <div class="cmp-item">地图</div>
+            <div class="cmp-item">3D地图</div>
+            <div class="cmp-item">文本</div>
+            <div class="cmp-item">图片</div>
+            <div class="cmp-item">列表</div>
+          </div>
+        </div>
+      </div>
+      <div class="hwvdata-center" style="padding: 50px;overflow: auto;">
+        <div style="width: 1920px;height: 1080px;box-shadow: 0 0 10px 0 rgba(0,0,0,.5);background: #0e2a42;transform: scale(0.7);transform-origin: 0 0;"></div>
+      </div>
+      <div class="hwvdata-right"></div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/hw.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

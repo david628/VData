@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <div class="hwvdata">
+    <div class="hwvdata-header"></div>
+    <div class="hwvdata-content">
+      <div class="hwvdata-left">
+        <div style="width: 100px;height: 100%;float: left;position: relative;">
+          <div>
+            <button id="id-all-del" type="button" style="padding: 10px;width: 100%;background-color: #dedede;">删除</button>
+          </div>
+          <div id="id-layer" style="width: 100%;position: absolute;top: 36px;bottom: 0;left: 0;overflow: auto;"></div>
+        </div>
+        <div id="id-compList" style="width: 60px;height: 100%;float: left;box-sizing: border-box;border-left: 1px solid #ddd;">
+        </div>
+      </div>
+      <div id="id-workspacerk" class="hwvdata-center" style="padding: 50px;overflow: auto;"></div>
+      <div class="hwvdata-right"></div>
+    </div>
+  </div>
+</body>
+</html>

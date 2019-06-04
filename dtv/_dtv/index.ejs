@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <div class="hwvdata">
+    <div class="hwvdata-header">
+      <ul class="horizontal-ul" style="padding-left: 400px;">
+        <li class="horizontal-li">
+          <a class="horizontal-li-a" href="javascript:;">组件</a>
+          <div class="horizontal-ul-dropdown">
+            <div id="id-compList"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="hwvdata-content">
+      <div class="hwvdata-left">
+        <div style="width: 160px;height: 100%;float: left;position: relative;">
+          <div style="text-align: center;height: 42px;line-height: 42px;font-size: 14px;color: #848491;">图层</div>
+          <div style="height: 42px;background: #21242c;"></div>
+          <div id="id-layer" style="width: 100%;overflow: auto;"></div>
+          <!-- <div id="id-layer" style="width: 100%;position: absolute;top: 36px;bottom: 0;left: 0;overflow: auto;"></div> -->
+        </div>
+      </div>
+      <div id="id-workspacerk" class="hwvdata-center" style="padding: 50px;overflow: auto;"></div>
+      <div class="hwvdata-right">
+        <div id="id-hwvdata-setting" class="hwvdata-setting"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
